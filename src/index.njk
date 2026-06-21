@@ -26,10 +26,10 @@ description: Building AI products and systems from scratch — documented by Geo
 <div class="recent">
   <h2>Recent builds</h2>
   <ul class="post-list">
-  {% for post in collections.posts | reverse | slice(0, 5) %}
+  {% for post in collections.posts | limit(5) %}
     <li>
       <a href="{{ post.url }}">{{ post.data.title }}</a>
-      <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+      <div class="post-date">{{ post.date | dateDisplay }}</div>
     </li>
   {% else %}
     <li style="color:#555;font-style:italic">First post coming soon.</li>
